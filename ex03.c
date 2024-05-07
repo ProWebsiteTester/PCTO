@@ -4,12 +4,9 @@ int main()
 {
     //Variabili//
 
-    int a = 3; //numeri interi %d
-    int b = 5;
-    float c = 2.654321; //numeri con 6 cifre dopo virgola %f
-    float d = 1.234567;
-    double e = 2.654321987654321; //numeri con 15 cifre dopo virgola (+precisione) %lf
-    double f = 3.987654321654321;
+    int a = 3 , b = 5; //numeri interi %d
+    float c = 2.654321 , d = 1.234567; //numeri con 6 cifre dopo virgola %f
+    double e = 2.654321987654321 , f = 3.987654321654321; //numeri con 15 cifre dopo virgola (+precisione) %lf
 
     printf("Somme \n");
     printf("a+10 = %d \n", a + 10); //Somma
