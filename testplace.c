@@ -4,26 +4,13 @@
 
 int main()
 {
-        printf("Come ti chiami apprendista? \n");
-        char nomeutente[50];
-        scanf(" %[^\n]s", nomeutente);
-        printf("Ok %s, ora iniziamo\n\n", nomeutente);
-
-        printf("accanto a chi ti siedi?")
-        scanf("%s", compagno);
-
-        for (int i = 0; compagno[i]; i++) {
-            compagno[i] = tolower(compagno[i]);
-        }
-
-        if (strcmp(compagno, "al vampiro") == 0)
-        {
-            printf("Sei morto");
-        }
-        
-        else
-        {
-            printf("Ti siedi accanto %s", compagno);
-            printf(" e scopri che si chiama %s, come te\n", nomeutente);  
-        }
+                int a;
+                while (a<15)
+                {
+                    printf("Crolli \nEsplosioni \nMorti");
+                    a++;
+                }
+                printf("\nTi riesci a salvare solo grazie alle energie prese poco prima con la colazione");
+                printf("\nNon facilmente esci dalle macerie dell'istituto.");
+                printf("\nTorni a casa passando per un campo di unicorni. Ti avvicini?");
 }
