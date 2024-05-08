@@ -1,10 +1,10 @@
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+#include <stdio.h> //solita libreria
+#include <string.h> //libreria per le stringhe negli if facilitati
+#include <ctype.h> //per poter semplificare gli if mettendo tutto in minuscole
 
 int main()
 {
-    char choice[3];
+    char choice[3]; //variabile per scelta si/no iniziale
 
     printf("Vuoi giocare?");
     scanf("%s", choice);
@@ -22,13 +22,13 @@ int main()
     else
     {
         printf("Come ti chiami apprendista? \n");
-        char nomeutente[50];
+        char nomeutente[50]; //variabile per username
         scanf(" %[^\n]s", nomeutente);
         printf("Ok %s, ora iniziamo\n\n", nomeutente);
 
         printf("Tutti vanno a scuola di magia ma solo per %s sarebbe stato il primo giorno.\n\n", nomeutente);
         
-        float orario;
+        float orario; //variabile per orario sveglia
         printf("A che ora ti svegli %s per andare a scuola?\n", nomeutente);
         scanf("%f", &orario);
 
@@ -43,16 +43,16 @@ int main()
             printf("Ti svegli alle %.2f ", orario);
             printf("e fai colazione. \nCosa prendi per colazione?\n");
 
-            char colazione[50];
+            char colazione[50]; //variabile per colazione
             scanf(" %[^\n]s", colazione);
             printf("\nFinisci di mangiare %s ed esci di casa.\n", colazione);
         }
 
         printf("Come vai a scuola?");
-        char trasporto[50];
+        char trasporto[50]; //variabile per mezzo di trasporto
         scanf(" %[^\n]s", trasporto);
 
-        char volo[15];
+        char volo[15]; //variabile per piattaforma volante
         printf("\nArrivi (stranamente) in tempo %s. \nDevi andare alla classe di pozioni magiche che si trova al secondo piano.", trasporto);
         printf("\nQuale delle due piattaforme volanti prendi? \n");
         scanf(" %[^\n]s", volo);
@@ -68,7 +68,7 @@ int main()
         }
 
         printf("Prendi la seconda piattaforma e corri verso la classe di pozioni.\nTi scusi per il ritardo e vedi che gli unici posti disponibili sono accanto all'elfo, al lupo mannaro e al vampiro.\nAccanto a chi ti siedi?");
-        char compagno[25];
+        char compagno[25]; //variabile per compagno di banco
 
         scanf(" %[^\n]s", compagno);
 
@@ -76,9 +76,9 @@ int main()
             compagno[i] = tolower(compagno[i]);
         }
 
-        if (strcmp(compagno, "al vampiro") == 0)
+        if (strcmp(compagno, "al vampiro") == 0) //se si sceglie il vampiro si muore
         {
-            printf("Sei morto");
+            printf("\nSei morto perch'e il vampiro aveva sete.");
         }
         
         else
@@ -94,10 +94,10 @@ int main()
             printf("%s ma decide di farne una mischiando tutti i materiali a disposizione.\n", pozione);
             printf("Succede una cosa che nessuno mai si sarebbe aspettato (esplode la scuola).\nSecoli di tradizioni e mistiche creazioni buttati per colpa di %s che non ha voluto seguire quello che avevi detto.", nomeutente);
 
-            if (orario <= 10)
+            if (orario <= 10) //stessa variabile orario iniziale per poter ricoleggare la scelta della colazione
             {
                 int a;
-                while (a=<10)
+                while (a<=10)
                 {
                     printf("\nCrolli \nEsplosioni \nMorti");
                     a++;
@@ -105,7 +105,7 @@ int main()
                 printf("\nTi riesci a salvare solo grazie alle energie prese poco prima con la colazione");
                 printf("\nNon facilmente esci dalle macerie dell'istituto.");
                 printf("\nTorni a casa passando per un campo di unicorni. Ti avvicini?");
-                char unicorno[3];
+                char unicorno[3]; //variabile scelta per unicorno
                 scanf(" %[^\n]s", unicorno);
 
                 for (int i = 0; unicorno[i]; i++)
