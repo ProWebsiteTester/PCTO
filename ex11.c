@@ -3,13 +3,13 @@
 int main()
 {
     int a; //creazione variabili
-    int b = a - 1;
+
     int c = 0;
     
     printf("Inserisci un numero \n"); //richiesta all'utente
     scanf("%d", &a); //inserisci variabile a
 
-
+    int b = a - 1;
 
     while (b > 1)
     {
