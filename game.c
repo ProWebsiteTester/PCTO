@@ -17,7 +17,7 @@ int main()
     
     if (strcmp(choice, "no") == 0)
     {
-        printf("Ci dispiace");
+        printf("Ci dispiace\n");
     } 
     
     else
@@ -57,19 +57,23 @@ int main()
         float orario; //variabile per orario sveglia
         printf("A che ora ti svegli %s per andare a scuola?\n\n", nomeutente);
         scanf("%f", &orario);
-
+        
+        char colazione[50]; //variabile per colazione
+        
         if (orario > 10)
         {
             printf("Ti svegli alle %.2f \n\n", orario);
             printf("rendendoti conto di essere in ritardo \n(come al solito)\nMangi di corsa la prima cosa che trovi ed esci di casa.\n\n");
         }
         
+
+
         else if (orario <= 10)
         {
             printf("Ti svegli alle %.2f ", orario);
             printf("e fai colazione. \nCosa prendi per colazione?\n");
 
-            char colazione[50]; //variabile per colazione
+            
             scanf(" %[^\n]s", colazione);
             printf("\nFinisci di mangiare %s ed esci di casa.\n\n", colazione);
         }
@@ -80,7 +84,7 @@ int main()
 
         char volo[15]; //variabile per piattaforma volante
         printf("\nArrivi (stranamente) in tempo %s. \nDevi andare alla classe di pozioni magiche che si trova al secondo piano.", trasporto);
-        printf("\nQuale delle due piattaforme volanti prendi? \n\n");
+        printf("\nQuale delle due piattaforme volanti prendi? La prima o la seconda?\n\n");
         scanf(" %[^\n]s", volo);
 
 
@@ -118,19 +122,19 @@ int main()
             char pozione[25];
             scanf(" %[^\n]s", pozione);
 
-            printf("\nProponi %s di fare una", compagno);
+            printf("\nProponi %s di fare una ", compagno);
             printf("%s ma decide di farne una mischiando tutti i materiali a disposizione.\n\n", pozione);
             printf("Succede una cosa che nessuno mai si sarebbe aspettato (esplode la scuola).\nSecoli di tradizioni e mistiche creazioni buttati per colpa di %s che non ha voluto seguire quello che avevi detto.\n\n", nomeutente);
 
             if (orario <= 10) //stessa variabile orario iniziale per poter ricoleggare la scelta della colazione
             {
                 int a;
-                while (a<=10)
+                while (a<=7)
                 {
                     printf("\nCrolli \nEsplosioni \nMorti");
                     a++;
                 }
-                printf("\n\nTi riesci a salvare solo grazie alle energie prese poco prima con la colazione");
+                printf("\n\nTi riesci a salvare solo grazie alle energie prese poco prima con %s", colazione);
                 printf("\nNon facilmente esci dalle macerie dell'istituto.");
                 printf("\n\nTorni a casa passando per un campo di unicorni. Ti avvicini?\n");
                 char unicorno[3]; //variabile scelta per unicorno
@@ -145,16 +149,33 @@ int main()
                     printf("\nNon sono pacifici quanto sembravano essere, %s sei morto\n", nomeutente);
                 }
                 else
-                {
+                {   
+                    printf("\nDecidi di continuare verso casa, dopo una giornata cosi\nstancante non puoi perdere altre energie.\nSul tragitto incontri un clan di goblin che vuole rapinarti\n");
+                    printf("Cosa fai %s? Gli dai tutto ciò che hai o combatti?", nomeutente);
+                    char goblin[40];
+                    scanf(" %[^\n]s", goblin);
+
+                    for (int i = 0; goblin[i]; i++)
+                    {
+                    goblin[i] = tolower(goblin[i]);
+                    }
+
+                    if (strcmp(goblin, "combatti") == 0 || strcmp(goblin, "combatto") == 0)
+                    {
+                        printf("\nCombatti con tutte le energie che ti rimangono.\nMa quando meno te lo aspetti arriva il tuo compagno di banco %s", nomeutente);
+                        printf("\nDopo ciò che era successo, avresti voluto vendicarti \nma lo risparmi dopo l'aiuto che ti da con i goblin.");
+                    }
+
                     printf("\n\nRealizzi che forse non 'e stata la migliore delle giornate \ne che svegliarti pochi minuti piu tardi avrebbe potuto farti morire.\nInizi a ripensare a come una semplice colazione ti abbia salvato.\nChi sa quanti universi alternativi si celano dietro le decisioni di ogni giorno.\n\n");
-                    printf("Ideato da Prisca Saverese Benni\n Creato da Filippo Labate \nPossibile solo grazie a %s\n", nomeutente);
+                    
                 }
             }
             else
             {
                 printf("\n\nPurtroppo qui finisce la vita di %s,\nun povero studente apprendista che proprio durante il suo primo giorno di scuola \n si 'e ritrovato accanto un essere inutile che ha portato la fine del vecchio istituto.", nomeutente);
-                printf("\nDisse il professore alla fine della sua lezione di storia magica e \nl'omonimo %s decise di tornare a casa fiero di non aver fatto esplodere \nla nuova scuola durante il suo primo giorno.", nomeutente);
+                printf("\nDisse il professore alla fine della sua lezione di storia magica e \nl'omonimo %s decise di tornare a casa fiero di non aver fatto esplodere \nla nuova scuola durante il suo primo giorno.\n", nomeutente);
             }
+            printf("\n\nIdeato e creato da\nPrisca Saverese Benni\ne Filippo Labate. \nPossibile solo grazie a %s\n", nomeutente);
         }
     }
 }
